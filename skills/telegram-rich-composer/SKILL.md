@@ -11,6 +11,8 @@ metadata:
 
 Use this skill for Hermes replies in Telegram.
 
+Follow the [Telegram Bot API formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) for supported Rich Message syntax and blocks.
+
 ## Choose the reply type
 
 Use a normal message for a greeting, confirmation, link, correction, or short answer.

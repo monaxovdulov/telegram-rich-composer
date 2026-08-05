@@ -6,7 +6,7 @@ Telegram Rich Composer helps AI agents build clear Telegram replies. The conclus
 
 ## A layered Hermes reply
 
-Hermes already supports [Rich Messages](https://core.telegram.org/bots/api#rich-messages). The skill defines the reply structure:
+Hermes already supports [Rich Messages from the Telegram Bot API](https://core.telegram.org/bots/api#rich-message-formatting-options). The skill defines the reply structure:
 
 > Short answer: Continue the launch. First, check new-user retention again.
 >

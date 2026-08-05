@@ -4,7 +4,7 @@ Reviewed on 2026-08-05. Use primary sources for behavior that can change.
 
 | Source | Baseline | Decision supported |
 |---|---|---|
-| [Telegram Bot API Rich Messages](https://core.telegram.org/bots/api#rich-messages) | Bot API 10.2 page | InputRichMessage alternatives, explicit blocks, media bindings, limits, draft streaming, reply and topic fields. |
+| [Telegram Bot API Rich Message formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) | Bot API 10.2 page | Markdown, HTML, explicit blocks, media bindings, limits, draft streaming, reply and topic fields. |
 | [Agent Skills specification](https://agentskills.io/specification) | Page read 2026-08-05 | Skill name, description, frontmatter, and progressive disclosure. |
 | [ASD-STE100](https://www.asd-ste100.org/) | Issue 9 public page | Issue date, ownership, trademark, and careful claim wording. |
 | [Eve](https://github.com/vercel/eve) | `e5c91918ed898f72047d2a1e33902cbb9db3e452` | Packaged skills, typed tools, runtime context, Telegram channel limitations. |

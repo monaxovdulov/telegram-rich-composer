@@ -6,7 +6,7 @@ Telegram Rich Composer помогает AI-агенту собирать пон�
 
 ## Как выглядит ответ Hermes
 
-Hermes уже поддерживает [Rich Messages](https://core.telegram.org/bots/api#rich-messages). Skill задаёт структуру ответа:
+Hermes уже поддерживает [Rich Messages из Telegram Bot API](https://core.telegram.org/bots/api#rich-message-formatting-options). Skill задаёт структуру ответа:
 
 > Коротко: запуск можно продолжать. Сначала перепроверьте удержание новых пользователей.
 >
