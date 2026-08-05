@@ -32,6 +32,7 @@ Create one semantic `CompositionSpec`; keep the recipient, bot token, current re
 - For architecture and guarantees, read [docs/en/architecture.md](docs/en/architecture.md).
 - For field semantics, read [docs/en/composition-spec.md](docs/en/composition-spec.md) and the canonical JSON Schema.
 - For Eve, Iva, Hermes, direct Bot API, CLI, and MCP setup, read [docs/en/adapters.md](docs/en/adapters.md) and the matching `adapters/` directory.
+- For a skill-only Hermes trial, use [skills/telegram-rich-composer/SKILL.md](skills/telegram-rich-composer/SKILL.md) and [docs/en/hermes-quickstart.md](docs/en/hermes-quickstart.md).
 - For per-turn channel prompting, use [references/always-on-routing.md](references/always-on-routing.md).
 - For test and release gates, read [docs/en/test-plan.md](docs/en/test-plan.md).
 - For official and inspected-source provenance, read [references/sources.md](references/sources.md).

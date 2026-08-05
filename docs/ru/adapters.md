@@ -136,9 +136,17 @@ Typed tool читает спецификацию и возвращает deliver
 
 ## Hermes Agent
 
-В Hermes commit `1be70d635...` уже есть включаемый rich fast path, rich drafts, rich final edits, topic routing, `reply_parameters` и запрет повторной отправки после неизвестного результата.
+В Hermes commit `6564f319a...` уже есть включаемый rich fast path, rich drafts, rich final edits, topic routing, `reply_parameters` и запрет повторной отправки после неизвестного результата.
 
-Установи skill в `~/.hermes/skills/telegram-rich-composer/`. Необязательный plugin регистрирует tool для compile и validation. Он не заменяет Telegram platform adapter. Native adapter отвечает за `chat_id`, topics, reply anchors и доставку.
+Для первого теста установи лёгкий Hermes-пакет. Он использует штатную отправку raw Markdown и не требует Python-пакета.
+
+```bash
+hermes skills install monaxovdulov/telegram-rich-composer/skills/telegram-rich-composer --yes
+```
+
+Установи `gateway.platforms.telegram.extra.rich_messages` в `true`. Для первого теста оставь `rich_drafts` в значении `false`. [Краткая инструкция для Hermes](hermes-quickstart.md) содержит готовое задание агенту и тестовый запрос.
+
+Необязательный plugin добавляет policy helpers для полной интеграции через `CompositionSpec`. Он не заменяет Telegram platform adapter. Native adapter отвечает за `chat_id`, topics, reply anchors и доставку.
 
 Код стороннего plugin нужно явно включить в `plugins.enabled`. Если native Rich Markdown достаточно, можно установить только skill без plugin.
 

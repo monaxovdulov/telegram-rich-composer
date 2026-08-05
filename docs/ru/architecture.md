@@ -164,7 +164,7 @@ Reference adapter принимает trusted context от вызывающей �
 - открытая информация об ASD-STE100 Issue 9;
 - Eve commit `e5c91918ed898f72047d2a1e33902cbb9db3e452`;
 - Iva commit `b3544a2c19341a2231353b2942905748bf391751`;
-- Hermes Agent commit `1be70d63548845eb8918c08ed698cda0674cf9a7`;
+- Hermes Agent commit `6564f319a647b47de391cab2f608660323804a2b`;
 - humanizer-ru commit `91f70df11f7fb30722e6fcf18803d402e2d86a53`.
 
 Ссылки и заметки об исследовании лежат в `references/sources.md`.
