@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "surface": {
+    "channel": "telegram",
+    "chat_type": "private",
+    "locale": "en",
+    "is_draft": false,
+    "capabilities": {
+      "rich_blocks": true,
+      "rich_markdown": true,
+      "rich_html": true,
+      "legacy_html": true,
+      "legacy_markdown": true,
+      "plain_album": true,
+      "media_spoiler": true,
+      "details_nested_media": true,
+      "controlled_local_upload": false
+    }
+  },
+  "selection": {
+    "mode": "rich",
+    "pattern": "hidden-sound-note",
+    "density": "standard",
+    "reason_codes": [
+      "structure_improves_scan"
+    ],
+    "showcase_requested": false
+  },
+  "summary": "hidden sound note",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "The conclusion stays visible and quiet."
+    },
+    {
+      "type": "details",
+      "summary": "Ambient note · 0:18",
+      "open": false,
+      "blocks": [
+        {
+          "type": "voice_note",
+          "media_id": "voice",
+          "duration_label": "0:18",
+          "caption": {
+            "text": "Optional field recording"
+          }
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "voice",
+      "kind": "voice_note",
+      "source": {
+        "type": "telegram_file_id",
+        "file_id": "telegram-voice"
+      }
+    }
+  ],
+  "delivery": {
+    "reply": "inherit",
+    "thread": "inherit",
+    "silent": false,
+    "protect_content": false,
+    "entity_detection": "explicit_only"
+  },
+  "fallback": {
+    "ladder": [
+      "rich_blocks",
+      "rich_markdown",
+      "rich_html",
+      "legacy_html",
+      "legacy_markdown",
+      "plain_album"
+    ],
+    "allow_feature_loss": true,
+    "on_unknown_delivery": "stop_and_reconcile"
+  },
+  "diagnostics": {
+    "warnings": []
+  }
+}

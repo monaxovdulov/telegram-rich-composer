@@ -1,0 +1,7 @@
+{
+  "name": "telegram-rich-composer-policy",
+  "version": "0.1.0",
+  "description": "Situational Telegram rich-message policy helpers",
+  "entrypoint": "plugin.py",
+  "network": false
+}

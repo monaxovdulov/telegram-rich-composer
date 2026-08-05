@@ -1,0 +1,4 @@
+interface:
+  display_name: "Telegram Rich Composer"
+  short_description: "Compose safe Telegram rich replies"
+  default_prompt: "Use $telegram-rich-composer to choose and compose a Telegram reply."

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "telegram-rich-composer"
+version = "0.1.0"
+description = "Compose and validate situational Telegram Rich Messages"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "telegram-rich-composer contributors" }]
+dependencies = ["jsonschema>=4.23,<5"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.9",
+]
+
+[project.scripts]
+telegram-rich-composer = "telegram_rich_composer.cli:main"
+trc = "telegram_rich_composer.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/telegram_rich_composer"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"schemas/composition-spec.schema.json" = "telegram_rich_composer/schemas/composition-spec.schema.json"
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]

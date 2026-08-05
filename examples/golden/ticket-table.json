@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "surface": {
+    "channel": "telegram",
+    "chat_type": "private",
+    "locale": "en",
+    "is_draft": false,
+    "capabilities": {
+      "rich_blocks": true,
+      "rich_markdown": true,
+      "rich_html": true,
+      "legacy_html": true,
+      "legacy_markdown": true,
+      "plain_album": true,
+      "media_spoiler": true,
+      "details_nested_media": true,
+      "controlled_local_upload": false
+    }
+  },
+  "selection": {
+    "mode": "rich",
+    "pattern": "ticket-table",
+    "density": "standard",
+    "reason_codes": [
+      "structure_improves_scan"
+    ],
+    "showcase_requested": false
+  },
+  "summary": "ticket table",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Observation ticket"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "text": "Field",
+            "header": true,
+            "align": "left"
+          },
+          {
+            "text": "Value",
+            "header": true,
+            "align": "right"
+          }
+        ],
+        [
+          {
+            "text": "Gate"
+          },
+          {
+            "text": "C12",
+            "align": "right"
+          }
+        ],
+        [
+          {
+            "text": "Time"
+          },
+          {
+            "text": "08:40",
+            "align": "right"
+          }
+        ]
+      ],
+      "bordered": true,
+      "striped": true,
+      "caption": "Compact mobile plate"
+    }
+  ],
+  "media": [],
+  "delivery": {
+    "reply": "inherit",
+    "thread": "inherit",
+    "silent": false,
+    "protect_content": false,
+    "entity_detection": "explicit_only"
+  },
+  "fallback": {
+    "ladder": [
+      "rich_blocks",
+      "rich_markdown",
+      "rich_html",
+      "legacy_html",
+      "legacy_markdown",
+      "plain_album"
+    ],
+    "allow_feature_loss": true,
+    "on_unknown_delivery": "stop_and_reconcile"
+  },
+  "diagnostics": {
+    "warnings": []
+  }
+}

@@ -1,0 +1,6 @@
+{"context":{"intent":"answer","complexity":"low"},"expected":{"mode":"plain","density":"calm"}}
+{"context":{"intent":"comparison","needs_structure":true},"expected":{"mode":"rich","pattern":"comparison-matrix"}}
+{"context":{"intent":"tutorial","complexity":"high"},"expected":{"mode":"rich","pattern":"step-by-step-tutorial"}}
+{"context":{"intent":"report","group_chat":true},"expected":{"mode":"rich","density":"calm"}}
+{"context":{"intent":"showcase","user_requested_rich":true},"expected":{"mode":"rich","density":"showcase"}}
+{"context":{"intent":"gallery","has_media":true},"expected":{"mode":"rich","pattern":"visual-gallery"}}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "surface": {
+    "channel": "telegram",
+    "chat_type": "private",
+    "locale": "en",
+    "is_draft": false,
+    "capabilities": {
+      "rich_blocks": true,
+      "rich_markdown": true,
+      "rich_html": true,
+      "legacy_html": true,
+      "legacy_markdown": true,
+      "plain_album": true,
+      "media_spoiler": true,
+      "details_nested_media": true,
+      "controlled_local_upload": false
+    }
+  },
+  "selection": {
+    "mode": "rich",
+    "pattern": "museum-drawers",
+    "density": "standard",
+    "reason_codes": [
+      "structure_improves_scan"
+    ],
+    "showcase_requested": false
+  },
+  "summary": "museum drawers",
+  "blocks": [
+    {
+      "type": "photo",
+      "media_id": "hero",
+      "caption": {
+        "text": "The object in its current setting"
+      }
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "text": "Object",
+            "header": true
+          },
+          {
+            "text": "Field recorder",
+            "header": true
+          }
+        ],
+        [
+          {
+            "text": "Date"
+          },
+          {
+            "text": "1984"
+          }
+        ]
+      ],
+      "bordered": true
+    },
+    {
+      "type": "details",
+      "summary": "Provenance",
+      "open": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Catalogued from the working archive."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "summary": "Sound",
+      "open": false,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A short ambient note is available separately."
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "hero",
+      "kind": "photo",
+      "source": {
+        "type": "telegram_file_id",
+        "file_id": "telegram-hero"
+      }
+    }
+  ],
+  "delivery": {
+    "reply": "inherit",
+    "thread": "inherit",
+    "silent": false,
+    "protect_content": false,
+    "entity_detection": "explicit_only"
+  },
+  "fallback": {
+    "ladder": [
+      "rich_blocks",
+      "rich_markdown",
+      "rich_html",
+      "legacy_html",
+      "legacy_markdown",
+      "plain_album"
+    ],
+    "allow_feature_loss": true,
+    "on_unknown_delivery": "stop_and_reconcile"
+  },
+  "diagnostics": {
+    "warnings": []
+  }
+}

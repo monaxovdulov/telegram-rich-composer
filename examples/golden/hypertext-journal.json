@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "surface": {
+    "channel": "telegram",
+    "chat_type": "private",
+    "locale": "en",
+    "is_draft": false,
+    "capabilities": {
+      "rich_blocks": true,
+      "rich_markdown": true,
+      "rich_html": true,
+      "legacy_html": true,
+      "legacy_markdown": true,
+      "plain_album": true,
+      "media_spoiler": true,
+      "details_nested_media": true,
+      "controlled_local_upload": false
+    }
+  },
+  "selection": {
+    "mode": "rich",
+    "pattern": "hypertext-journal",
+    "density": "standard",
+    "reason_codes": [
+      "structure_improves_scan"
+    ],
+    "showcase_requested": false
+  },
+  "summary": "hypertext journal",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": [
+        {
+          "type": "anchor_link",
+          "content": [
+            {
+              "type": "text",
+              "text": "Read thesis"
+            }
+          ],
+          "target": "thesis"
+        },
+        {
+          "type": "text",
+          "text": " · "
+        },
+        {
+          "type": "anchor_link",
+          "content": [
+            {
+              "type": "text",
+              "text": "Inspect evidence"
+            }
+          ],
+          "target": "evidence"
+        }
+      ]
+    },
+    {
+      "type": "anchor",
+      "name": "thesis"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "A compact journal"
+    },
+    {
+      "type": "paragraph",
+      "text": "The answer appears before its supporting chapters."
+    },
+    {
+      "type": "anchor",
+      "name": "evidence"
+    },
+    {
+      "type": "details",
+      "summary": "Evidence",
+      "open": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": [
+            {
+              "type": "reference",
+              "name": "method",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Two independent observations support the result."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": [
+        {
+          "type": "reference_link",
+          "target": "method",
+          "content": [
+            {
+              "type": "text",
+              "text": "Method note"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "delivery": {
+    "reply": "inherit",
+    "thread": "inherit",
+    "silent": false,
+    "protect_content": false,
+    "entity_detection": "explicit_only"
+  },
+  "fallback": {
+    "ladder": [
+      "rich_blocks",
+      "rich_markdown",
+      "rich_html",
+      "legacy_html",
+      "legacy_markdown",
+      "plain_album"
+    ],
+    "allow_feature_loss": true,
+    "on_unknown_delivery": "stop_and_reconcile"
+  },
+  "diagnostics": {
+    "warnings": []
+  }
+}

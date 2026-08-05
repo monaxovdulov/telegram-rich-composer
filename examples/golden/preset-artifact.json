@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "surface": {
+    "channel": "telegram",
+    "chat_type": "private",
+    "locale": "en",
+    "is_draft": false,
+    "capabilities": {
+      "rich_blocks": true,
+      "rich_markdown": true,
+      "rich_html": true,
+      "legacy_html": true,
+      "legacy_markdown": true,
+      "plain_album": true,
+      "media_spoiler": true,
+      "details_nested_media": true,
+      "controlled_local_upload": false
+    }
+  },
+  "selection": {
+    "mode": "rich",
+    "pattern": "artifact",
+    "density": "showcase",
+    "reason_codes": [
+      "user_requested_rich"
+    ],
+    "showcase_requested": true
+  },
+  "summary": "artifact",
+  "blocks": [
+    {
+      "type": "photo",
+      "media_id": "artifact",
+      "caption": {
+        "text": "Single hero view"
+      }
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Artifact A-17"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "text": "Material",
+            "header": true
+          },
+          {
+            "text": "Steel",
+            "header": true
+          }
+        ],
+        [
+          {
+            "text": "Status"
+          },
+          {
+            "text": "Observed"
+          }
+        ]
+      ],
+      "bordered": true
+    },
+    {
+      "type": "preformatted",
+      "text": "ID=A-17\\nUTC=08:42"
+    },
+    {
+      "type": "details",
+      "summary": "Provenance",
+      "open": false,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Recorded in the field archive."
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "artifact",
+      "kind": "photo",
+      "source": {
+        "type": "telegram_file_id",
+        "file_id": "telegram-artifact"
+      }
+    }
+  ],
+  "delivery": {
+    "reply": "inherit",
+    "thread": "inherit",
+    "silent": false,
+    "protect_content": false,
+    "entity_detection": "explicit_only"
+  },
+  "fallback": {
+    "ladder": [
+      "rich_blocks",
+      "rich_markdown",
+      "rich_html",
+      "legacy_html",
+      "legacy_markdown",
+      "plain_album"
+    ],
+    "allow_feature_loss": true,
+    "on_unknown_delivery": "stop_and_reconcile"
+  },
+  "diagnostics": {
+    "warnings": []
+  }
+}

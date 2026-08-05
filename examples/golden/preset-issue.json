@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "surface": {
+    "channel": "telegram",
+    "chat_type": "private",
+    "locale": "en",
+    "is_draft": false,
+    "capabilities": {
+      "rich_blocks": true,
+      "rich_markdown": true,
+      "rich_html": true,
+      "legacy_html": true,
+      "legacy_markdown": true,
+      "plain_album": true,
+      "media_spoiler": true,
+      "details_nested_media": true,
+      "controlled_local_upload": false
+    }
+  },
+  "selection": {
+    "mode": "rich",
+    "pattern": "issue",
+    "density": "showcase",
+    "reason_codes": [
+      "user_requested_rich"
+    ],
+    "showcase_requested": true
+  },
+  "summary": "issue",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Issue 07 · Quiet systems"
+    },
+    {
+      "type": "paragraph",
+      "text": "A visible thesis opens the issue."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "details",
+      "summary": "Chapter 1 · Finding",
+      "open": true,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Structure helps only when it reduces reading work."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "summary": "Chapter 2 · Evidence",
+      "open": false,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The supporting evidence remains available without crowding the opening."
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "delivery": {
+    "reply": "inherit",
+    "thread": "inherit",
+    "silent": false,
+    "protect_content": false,
+    "entity_detection": "explicit_only"
+  },
+  "fallback": {
+    "ladder": [
+      "rich_blocks",
+      "rich_markdown",
+      "rich_html",
+      "legacy_html",
+      "legacy_markdown",
+      "plain_album"
+    ],
+    "allow_feature_loss": true,
+    "on_unknown_delivery": "stop_and_reconcile"
+  },
+  "diagnostics": {
+    "warnings": []
+  }
+}
