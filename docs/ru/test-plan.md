@@ -116,4 +116,4 @@ Eval-набор включает бытовые вопросы, групповы
 - В репозитории нет `.env`, token, private chat ID, user data, database, log и медиа без лицензии.
 - Локальный Git status чистый.
 - Public CI проходит на release commit.
-- Release report содержит URL, install commands, test commands, known limitations, source baselines и отличия от прототипа.
+- README содержит рабочие команды установки, варианты использования, ограничения безопасности и пробелы в визуальной проверке.

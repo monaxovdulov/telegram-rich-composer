@@ -16,25 +16,12 @@ The package contains six layers.
 
 1. `SKILL.md` selects plain or rich output and selects a composition pattern.
 2. `CompositionSpec` stores the response structure without harness-specific fields.
-3. The renderer compiles the specification to explicit Telegram blocks, Rich Markdown, Rich HTML, legacy HTML, or plain text.
+3. The renderer compiles the specification to explicit Telegram blocks, Rich Markdown, Rich HTML, standard Telegram text, or plain text.
 4. The validator checks the schema, Telegram limits, editorial budgets, anchors, media, and safety rules.
 5. A harness adapter binds the payload to a trusted conversation context and negotiates capabilities.
 6. The fallback controller degrades the representation without losing the main answer.
 
-The polling bot, SQLite draft editor, and draft user interface from the prototype are out of scope.
-
-## Provenance boundary
-
-The local prototype `telegram-rich-publisher` had no license file on 2026-08-05. This project does not copy its source. It reimplements these observed behaviors:
-
-- map a Telegram `file_id` to a rich media binding;
-- keep preview and publish operations separate;
-- support slideshow, collage, article, and ordinary album output;
-- validate media and text limits before a request;
-- distinguish Bot API errors from transport errors;
-- use an ordinary media group as the final compatibility fallback.
-
-The new implementation is original MIT-licensed code.
+The package has no polling loop, conversation database, or end-user editor.
 
 ## Data flow
 
@@ -117,7 +104,7 @@ The renderer has four outputs.
 1. `rich_blocks` produces an `InputRichMessage.blocks` payload.
 2. `rich_markdown` produces `InputRichMessage.markdown` and explicit media bindings.
 3. `rich_html` produces `InputRichMessage.html` and explicit media bindings.
-4. `legacy` produces ordinary HTML or plain text plus a conventional media plan.
+4. The compatibility targets produce ordinary HTML, Markdown, or plain text with a conventional media plan.
 
 Exactly one of `blocks`, `markdown`, or `html` is present in one rich payload.
 
@@ -167,17 +154,6 @@ Hermes already has an opt-in rich fast path, draft streaming, rich final edits, 
 ### Direct Bot API
 
 The reference adapter accepts a trusted context supplied by the caller. It supports JSON requests and controlled multipart upload. It has an attempt ledger and never retries an unknown result automatically.
-
-## Design differences from the prototype
-
-- The canonical object is semantic and versioned. It is not a stored user draft.
-- Telegram Bot API 10.2 explicit blocks are the preferred output.
-- Media bindings can use `file_id`, URL, or controlled multipart upload.
-- Recipient selection is outside model output.
-- Capabilities are atomic and negotiated.
-- Timeout handling prevents duplicate sends.
-- Plain replies remain the default in ordinary chats.
-- The package has no polling loop, draft database, or anonymous upload service.
 
 ## Source baseline
 

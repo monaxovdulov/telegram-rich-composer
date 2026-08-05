@@ -13,7 +13,7 @@ Create one semantic `CompositionSpec`; keep the recipient, bot token, current re
 2. Call `select_composition(context)` or `trc select context.json`. Keep ordinary conversational answers plain. Choose rich only when structure, semantic media, high information density, or an explicit user request improves the answer.
 3. Build a spec against [schemas/composition-spec.schema.json](schemas/composition-spec.schema.json). Start with `calm`; use `showcase` only on explicit request.
 4. Validate with `trc validate spec.json`. Treat every error as blocking. Review warnings instead of suppressing them blindly.
-5. Negotiate adapter capabilities with `trc plan`. Prefer `rich_blocks`, then declared rich text modes, then legacy text or a plain album.
+5. Negotiate adapter capabilities with `trc plan`. Prefer `rich_blocks`, then a supported rich text mode, then standard Telegram text or a plain album.
 6. Render with `trc render spec.json --target rich_blocks`. The renderer owns Telegram field-name conversion.
 7. Let the adapter bind trusted conversation context and deliver. Never take `chat_id` or a token from the spec. Never retry or fall back after a timeout or an unknown delivery result; stop and reconcile first.
 8. Run the editorial and visual QA checks in [docs/en/visual-system.md](docs/en/visual-system.md) or [docs/ru/visual-system.md](docs/ru/visual-system.md).

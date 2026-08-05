@@ -20,5 +20,4 @@ Reviewed on 2026-08-05. Use primary sources for behavior that can change.
 
 - ASD-STE100 is copyrighted and trademarked by ASD. This repository does not include the standard or its protected dictionary.
 - English documentation uses selected public ASD-STE100 principles. The project does not claim certification or strict conformance.
-- The local `telegram-rich-publisher` prototype had no license file during review. No source was copied from it.
 - Eve, Iva, Hermes Agent, and humanizer-ru are used as documented integration references. Their source is not vendored here.

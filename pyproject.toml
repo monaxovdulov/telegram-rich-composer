@@ -5,19 +5,30 @@ build-backend = "hatchling.build"
 [project]
 name = "telegram-rich-composer"
 version = "0.1.0"
-description = "Compose and validate situational Telegram Rich Messages"
+description = "Choose, validate, render, and safely send Telegram Rich Messages"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
 authors = [{ name = "telegram-rich-composer contributors" }]
+keywords = ["telegram", "bot-api", "rich-messages", "agent-skill", "ai-agent"]
 dependencies = ["jsonschema>=4.23,<5"]
 classifiers = [
+  "Development Status :: 3 - Alpha",
   "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Topic :: Communications :: Chat",
 ]
+
+[project.urls]
+Homepage = "https://github.com/monaxovdulov/telegram-rich-composer"
+Repository = "https://github.com/monaxovdulov/telegram-rich-composer"
+Documentation = "https://github.com/monaxovdulov/telegram-rich-composer#readme"
+Issues = "https://github.com/monaxovdulov/telegram-rich-composer/issues"
+Changelog = "https://github.com/monaxovdulov/telegram-rich-composer/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = [

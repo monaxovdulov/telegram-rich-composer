@@ -116,4 +116,4 @@ Mark each cell `verified`, `failed`, or `not tested`. Never convert `not tested`
 - No `.env`, token, private chat ID, user data, database, log, or unlicensed media is present.
 - The local repository has a clean status.
 - Public CI passes on the release commit.
-- The release report lists the repository URL, install commands, test commands, known limitations, source baselines, and differences from the prototype.
+- The README lists working install commands, use cases, safety limits, and known visual QA gaps.

@@ -16,25 +16,12 @@
 
 1. `SKILL.md` выбирает plain или rich и подходящую композицию.
 2. `CompositionSpec` хранит структуру ответа без полей конкретного харнеса.
-3. Renderer собирает explicit Telegram blocks, Rich Markdown, Rich HTML, обычный HTML или plain text.
+3. Renderer собирает explicit Telegram blocks, Rich Markdown, Rich HTML, обычный текст Telegram или plain text.
 4. Validator проверяет схему, лимиты Telegram, редакционные бюджеты, anchors, медиа и правила безопасности.
 5. Adapter связывает payload с доверенным контекстом разговора и сверяет возможности транспорта.
 6. Fallback упрощает представление и сохраняет главный ответ.
 
-Polling-бот, SQLite-редактор черновиков и интерфейс черновиков из прототипа сюда не входят.
-
-## Граница происхождения кода
-
-На 5 августа 2026 года у локального прототипа `telegram-rich-publisher` не было файла лицензии. Новый проект не копирует его исходный код. С нуля воспроизведены только проверенные варианты поведения:
-
-- связь Telegram `file_id` с rich media;
-- разделение preview и publish;
-- slideshow, collage, article и обычный album;
-- проверка медиа и текста до запроса;
-- разделение ошибок Bot API и транспорта;
-- обычный media group как последний совместимый fallback.
-
-Новая реализация опубликована по лицензии MIT.
+В пакете нет цикла чтения обновлений Telegram, базы диалогов и пользовательского редактора.
 
 ## Поток данных
 
@@ -117,7 +104,7 @@ Renderer поддерживает четыре результата.
 1. `rich_blocks` создаёт `InputRichMessage.blocks`.
 2. `rich_markdown` создаёт `InputRichMessage.markdown` и явные media bindings.
 3. `rich_html` создаёт `InputRichMessage.html` и явные media bindings.
-4. `legacy` создаёт обычный HTML или plain text и план обычных медиа.
+4. Форматы совместимости создают обычный HTML, Markdown или plain text и план обычных медиа.
 
 В одном rich payload присутствует ровно одно поле из `blocks`, `markdown` и `html`.
 
@@ -167,17 +154,6 @@ Hermes уже содержит включаемый rich fast path, streaming dr
 ### Direct Bot API
 
 Reference adapter принимает trusted context от вызывающей стороны. Он поддерживает JSON-запросы и контролируемый multipart upload. Журнал попыток не даёт автоматически повторить отправку с неизвестным результатом.
-
-## Отличия от прототипа
-
-- Канонический объект стал семантическим и версируемым. Это не пользовательский черновик в базе.
-- Основным результатом стали explicit blocks из Telegram Bot API 10.2.
-- Медиа поддерживает `file_id`, URL и контролируемый multipart upload.
-- Получателя выбирает trusted context, а не модель.
-- Capabilities проверяются по отдельности.
-- Timeout не создаёт повторную отправку.
-- Обычный короткий ответ остаётся plain.
-- В пакете нет polling loop, базы черновиков и анонимного upload service.
 
 ## База источников
 
