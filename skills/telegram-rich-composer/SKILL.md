@@ -1,7 +1,6 @@
 ---
 name: telegram-rich-composer
-description: Use when Hermes answers in Telegram and the reply benefits from a short visible conclusion, a numbered index, collapsible details, a table, or a task list. Keep ordinary replies plain.
-version: 0.1.0
+description: Shape Hermes replies for Telegram with a visible conclusion, next step, numbered index, collapsible details, table, or task list. Use for reports, comparisons, plans, evidence, and risks.
 metadata:
   hermes:
     tags: [telegram, rich-messages, writing]
@@ -10,7 +9,7 @@ metadata:
 
 # Telegram Rich Composer for Hermes
 
-Use this skill only for replies that Hermes sends to Telegram.
+Use this skill for Hermes replies in Telegram.
 
 ## Choose the reply type
 
@@ -25,9 +24,9 @@ Use a layered reply when the reader needs a conclusion now and may need evidence
 3. Put each secondary section in one `<details>` block.
 4. Match each `<summary>` number and title to the index.
 5. Use two to four details blocks and one nesting level.
-6. Keep warnings, deadlines, destructive actions, and the required next step outside collapsed details.
+6. Keep warnings, deadlines, destructive actions, and the required next step visible.
 7. Write in the user's language.
-8. Do not wrap the complete reply in a code fence.
+8. Return the reply as Markdown.
 
 Use this shape:
 
@@ -51,12 +50,12 @@ Index: 1. {first topic} · 2. {second topic} · 3. {third topic}
 </details>
 ```
 
-Do not force this template onto a short conversation. Do not hide the answer to make the reader open a section. Keep block mathematics outside `<details>`.
+Keep short conversations compact. Place the answer before the sections. Place block mathematics outside `<details>`.
 
 ## Hermes delivery boundaries
 
-Hermes must have `gateway.platforms.telegram.extra.rich_messages` set to `true`. Keep `rich_drafts` set to `false` for the first test.
+Set `gateway.platforms.telegram.extra.rich_messages` to `true`.
 
-The native Hermes Telegram adapter owns the bot token, recipient, topic, reply target, and final send. This skill must not request or print those values.
+The Hermes Telegram adapter handles the bot token, recipient, topic, reply target, and delivery. Keep those values in the adapter.
 
-If Telegram rejects rich rendering, keep the fallback readable. After a timeout or unknown delivery result, do not send a second copy.
+Keep the fallback readable. After an unknown delivery result, check the delivery state before retrying.

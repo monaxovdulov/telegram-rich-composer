@@ -2,13 +2,11 @@
 
 [Русская версия](README.ru.md)
 
-If your bot says “Done” or sends one link, plain text is enough. Trouble starts with four pricing plans, a long report, or a route: the point gets lost in a wall of text.
-
-Telegram Rich Composer turns those replies into a [Rich Message](https://core.telegram.org/bots/api#rich-messages) with a table, expandable details, a map, or media. It leaves short replies alone.
+Telegram Rich Composer helps AI agents build clear Telegram replies. The conclusion and next step come first. Details open by section. Tables, maps, and media support comparisons, routes, and visual explanations.
 
 ## A layered Hermes reply
 
-You ask Hermes to review a long report before a launch. It keeps the conclusion visible and puts secondary material below it:
+Hermes already supports [Rich Messages](https://core.telegram.org/bots/api#rich-messages). The skill defines the reply structure:
 
 > Short answer: Continue the launch. First, check new-user retention again.
 >
@@ -35,9 +33,9 @@ If retention does not improve, delay the broad launch and keep the current user 
 
 </details>
 
-The answer is visible before any tap. The reader opens only the section that they need.
+The answer is visible before any tap. Each supporting section opens in place.
 
-Already use Hermes? [Give this installation task to your agent](docs/en/hermes-quickstart.md). You do not need terminal experience.
+[Give Hermes this prepared task](docs/en/hermes-quickstart.md) to install the skill and test a reply.
 
 ## Choose a format
 
@@ -67,8 +65,7 @@ If validation prints `"valid": true`, the setup works. The last command shows th
 
 ## Choose how to use it
 
-- Hermes users can follow the [agent-led setup](docs/en/hermes-quickstart.md).
-- AI agents read [SKILL.md](SKILL.md) to choose between a plain reply and a Rich Message.
+- AI agents read [SKILL.md](SKILL.md) to choose a suitable message structure.
 - Python and command-line users can follow the [getting started guide](docs/en/getting-started.md).
 - Bot maintainers can use the [adapter guide](docs/en/adapters.md) for the direct Bot API, Eve, Iva, or Hermes Agent.
 
