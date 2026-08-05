@@ -21,6 +21,14 @@ def test_every_golden_example_is_valid():
         assert report.valid, (path.name, report.as_dict())
 
 
+def test_readme_workout_example_is_valid():
+    import json
+
+    path = Path(__file__).resolve().parents[1] / "examples" / "readme" / "workout-meme.json"
+    report = validate_spec(json.loads(path.read_text(encoding="utf-8")))
+    assert report.valid, report.as_dict()
+
+
 def test_recipient_data_is_rejected(load_golden):
     spec = load_golden("ticket-table")
     spec["chat_id"] = -100123

@@ -8,32 +8,31 @@ Telegram Rich Composer помогает AI-агенту собирать пон�
 
 Hermes уже поддерживает [Rich Messages из Telegram Bot API](https://core.telegram.org/bots/api#rich-message-formatting-options). Skill задаёт структуру ответа:
 
-> Коротко: запуск можно продолжать. Сначала перепроверьте удержание новых пользователей.
+> Коротко: программа тренировок готова 💪
 >
-> Индекс: 1. Основание · 2. Что сделать · 3. Риски
+> Индекс: 🌅 Утром · 🌙 Вечером
 
 <details>
-<summary>1. Основание</summary>
+<summary>🌅 УТРОМ</summary>
 
-Две основные метрики выросли. Выборка по удержанию пока мала.
+1. ПРЕСС КАЧАТ
+2. Т) БЕГИТ
+3. ТУРНИК
+4. АНЖУМАНЯ
 
 </details>
 
 <details>
-<summary>2. Что сделать</summary>
+<summary>🌙 ВЕЧЕРОМ</summary>
 
-Повторить замер на полной неделе и назначить ответственного за проверку.
-
-</details>
-
-<details>
-<summary>3. Риски</summary>
-
-Если удержание не подтвердится, отложить широкий запуск и оставить текущую группу пользователей.
+1. ПРЕСС КАЧАТ
+2. БЕГИТ
+3. ТУРНИК
+4. АНЖУМАНЯ
 
 </details>
 
-Главное видно сразу. Каждый раздел раскрывается отдельно.
+План виден сразу. Утро и вечер раскрываются отдельно.
 
 [Отправьте Hermes готовое задание](docs/ru/hermes-quickstart.md), чтобы установить skill и проверить такой ответ.
 
@@ -76,6 +75,7 @@ Composer только готовит сообщение. Ваш бот отве�
 Не начинайте с пустого JSON. Возьмите ближайший пример и переделайте под себя.
 
 - [`ticket-table.json`](examples/golden/ticket-table.json) для значений и сравнений
+- [`workout-meme.json`](examples/readme/workout-meme.json) — спецификация примера из README
 - [`map-cover.json`](examples/golden/map-cover.json) для места или маршрута
 - [`manual-animation.json`](examples/golden/manual-animation.json) для наглядных шагов
 - [`preset-issue.json`](examples/golden/preset-issue.json) для длинной статьи

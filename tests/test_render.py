@@ -51,6 +51,38 @@ def test_plain_fallback_preserves_readable_content(load_golden):
     assert "Gate | C12" in rendered.text
 
 
+def test_readme_workout_example_keeps_exact_labels_repetition_and_emoji():
+    path = Path(__file__).resolve().parents[1] / "examples" / "readme" / "workout-meme.json"
+    spec = json.loads(path.read_text(encoding="utf-8"))
+    blocks = render(spec, "rich_blocks").rich_message["blocks"]
+    morning, evening = blocks[2], blocks[3]
+
+    assert blocks[0]["text"] == "Коротко: программа тренировок готова 💪"
+    assert blocks[1]["text"] == "Индекс: 🌅 Утром · 🌙 Вечером"
+    assert morning["summary"] == "🌅 УТРОМ"
+    assert evening["summary"] == "🌙 ВЕЧЕРОМ"
+    assert morning["is_open"] is False
+    assert evening["is_open"] is False
+    morning_items = morning["blocks"][0]["items"]
+    evening_items = evening["blocks"][0]["items"]
+    assert [item["blocks"][0]["text"] for item in morning_items] == [
+        "ПРЕСС КАЧАТ",
+        "Т) БЕГИТ",
+        "ТУРНИК",
+        "АНЖУМАНЯ",
+    ]
+    assert [item["blocks"][0]["text"] for item in evening_items] == [
+        "ПРЕСС КАЧАТ",
+        "БЕГИТ",
+        "ТУРНИК",
+        "АНЖУМАНЯ",
+    ]
+
+    fallback = render(spec, "plain_album").text
+    assert fallback.count("ПРЕСС КАЧАТ") == 2
+    assert fallback.count("АНЖУМАНЯ") == 2
+
+
 def test_exactly_one_rich_input_representation(load_golden):
     for target, key in (
         ("rich_blocks", "blocks"),

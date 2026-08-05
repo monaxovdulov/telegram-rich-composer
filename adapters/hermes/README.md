@@ -20,7 +20,7 @@ gateway:
 
 Restart the gateway. Then use the test prompt in the [beginner guide](../../docs/en/hermes-quickstart.md), or the [Russian version](../../docs/ru/hermes-quickstart.md).
 
-The skill keeps normal conversation plain. It uses a short visible answer, a numbered index, and collapsed details only when the reply needs layers.
+The skill keeps normal conversation plain. It uses a short visible answer, useful navigation, and collapsed details only when the reply needs layers. Emoji labels appear only when they match the user's tone and improve scanning.
 
 ## Full composer integration
 

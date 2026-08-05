@@ -1,6 +1,6 @@
 ---
 name: telegram-rich-composer
-description: Shape Hermes replies for Telegram with a visible conclusion, next step, numbered index, collapsible details, table, or task list. Use for reports, comparisons, plans, evidence, and risks.
+description: Shape tone-aware Hermes replies for Telegram with a visible answer, useful navigation, collapsible details, tables, or task lists. Use for reports, comparisons, plans, evidence, risks, and structured demonstrations.
 metadata:
   hermes:
     tags: [telegram, rich-messages, writing]
@@ -22,9 +22,9 @@ Use a layered reply when the reader needs a conclusion now and may need evidence
 ## Build a layered reply
 
 1. Put the conclusion or next action in the first one to three lines.
-2. Add a one-line numbered index when the reply has two or more secondary sections.
+2. Add a one-line index only when it materially improves scanning. Prefer numbers for ordered or formal sections. Use short semantic emoji labels only when they match the user's tone and remain unambiguous.
 3. Put each secondary section in one `<details>` block.
-4. Match each `<summary>` number and title to the index.
+4. When an index is present, match each `<summary>` label and title to it.
 5. Use two to four details blocks and one nesting level.
 6. Keep warnings, deadlines, destructive actions, and the required next step visible.
 7. Write in the user's language.
@@ -53,6 +53,12 @@ Index: 1. {first topic} · 2. {second topic} · 3. {third topic}
 ```
 
 Keep short conversations compact. Place the answer before the sections. Place block mathematics outside `<details>`.
+
+## Tone and content fidelity
+
+Match the user's language and level of formality. Treat user-supplied text that is explicitly marked as exact or verbatim as fixed content: preserve its wording, capitalization, order, repetition, and intentional spelling.
+
+Standard Unicode emoji can appear directly in text and `<summary>` labels. Use them only when they carry navigation, status, or emphasis. Do not add emoji to every list item or use them as confetti. Keep facts, warnings, deadlines, and required actions clear in every tone.
 
 ## Hermes delivery boundaries
 
