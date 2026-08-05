@@ -6,6 +6,39 @@ If your bot says “Done” or sends one link, plain text is enough. Trouble sta
 
 Telegram Rich Composer turns those replies into a [Rich Message](https://core.telegram.org/bots/api#rich-messages) with a table, expandable details, a map, or media. It leaves short replies alone.
 
+## A layered Hermes reply
+
+You ask Hermes to review a long report before a launch. It keeps the conclusion visible and puts secondary material below it:
+
+> Short answer: Continue the launch. First, check new-user retention again.
+>
+> Index: 1. Evidence · 2. Next step · 3. Risks
+
+<details>
+<summary>1. Evidence</summary>
+
+Two primary metrics improved. The retention sample is still small.
+
+</details>
+
+<details>
+<summary>2. Next step</summary>
+
+Repeat the measurement for a complete week and assign an owner for the check.
+
+</details>
+
+<details>
+<summary>3. Risks</summary>
+
+If retention does not improve, delay the broad launch and keep the current user group.
+
+</details>
+
+The answer is visible before any tap. The reader opens only the section that they need.
+
+Already use Hermes? [Give this installation task to your agent](docs/en/hermes-quickstart.md). You do not need terminal experience.
+
 ## Choose a format
 
 | You need to send | Best starting point |
@@ -34,6 +67,7 @@ If validation prints `"valid": true`, the setup works. The last command shows th
 
 ## Choose how to use it
 
+- Hermes users can follow the [agent-led setup](docs/en/hermes-quickstart.md).
 - AI agents read [SKILL.md](SKILL.md) to choose between a plain reply and a Rich Message.
 - Python and command-line users can follow the [getting started guide](docs/en/getting-started.md).
 - Bot maintainers can use the [adapter guide](docs/en/adapters.md) for the direct Bot API, Eve, Iva, or Hermes Agent.

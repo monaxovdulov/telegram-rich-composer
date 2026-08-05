@@ -136,9 +136,17 @@ Do not use the old `rich-post` default digest recipient for conversational repli
 
 ## Hermes Agent
 
-Hermes commit `1be70d635...` already supports an opt-in rich fast path, rich drafts, rich final edits, topic routing, `reply_parameters`, and no-resend behavior for unknown rich results.
+Hermes commit `6564f319a...` supports an opt-in rich fast path, rich drafts, rich final edits, topic routing, `reply_parameters`, and no-resend behavior for unknown rich results.
 
-Install the skill under `~/.hermes/skills/telegram-rich-composer/`. The optional plugin registers a compile and validate tool. It does not replace the Telegram platform adapter. The native adapter owns `chat_id`, topics, reply anchors, and delivery.
+For a skill-only trial, install the small Hermes package. It uses the native raw Markdown transport and needs no Python package.
+
+```bash
+hermes skills install monaxovdulov/telegram-rich-composer/skills/telegram-rich-composer --yes
+```
+
+Set `gateway.platforms.telegram.extra.rich_messages` to `true`. Keep `rich_drafts` set to `false` for the first trial. See the [Hermes quickstart](hermes-quickstart.md) for an agent-led setup and test prompt.
+
+The optional plugin registers policy helpers for a full `CompositionSpec` integration. It does not replace the Telegram platform adapter. The native adapter owns `chat_id`, topics, reply anchors, and delivery.
 
 Enable third-party plugin code explicitly in `plugins.enabled`. A skill-only install requires no plugin execution when native Rich Markdown is enough.
 

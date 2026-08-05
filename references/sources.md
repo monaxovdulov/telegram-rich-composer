@@ -11,7 +11,7 @@ Reviewed on 2026-08-05. Use primary sources for behavior that can change.
 | [Eve site](https://eve.dev/) | Page read 2026-08-05 | Public project layout and tool model. |
 | [Iva](https://github.com/smixs/iva) | `b3544a2c19341a2231353b2942905748bf391751` | Rich routing, outbound redaction, current conversation binding, and HTML fallback. |
 | [Iva rich-post](https://github.com/smixs/iva/tree/main/agent/skills/rich-post) | Same commit | Prior standalone rich skill and its recipient guard. |
-| [Hermes skills](https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/skills.md) | `1be70d63548845eb8918c08ed698cda0674cf9a7` | Skill installation and progressive loading. |
+| [Hermes skills](https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/skills.md) | `6564f319a647b47de391cab2f608660323804a2b` | Skill installation, GitHub-path packages, security scanning, and progressive loading. |
 | [Hermes Telegram](https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/messaging/telegram.md) | Same commit | Gateway, group, topic, and media behavior. |
 | [Hermes plugins](https://hermes-agent.nousresearch.com/docs/user-guide/features/plugins) | Same commit | Plugin tool registration and opt-in execution. |
 | [humanizer-ru](https://github.com/smixs/humanizer-ru) | `91f70df11f7fb30722e6fcf18803d402e2d86a53` | Russian editorial audit and deterministic lint. |
